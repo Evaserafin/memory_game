@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(to right top, #0015ae, #0055d3, #007edc, #00a1d3, #00c1ca, #48cab0, #7dcf95, #afd07e, #d4b85b, #f49858, #ff7675, #fb5fa6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(4, 8rem);
+    grid-template-rows: repeat(4, 8rem);
+    grid-gap: 2rem;
+    perspective: 800px;
+}
+
+.card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: rgba(0, 0, 0, 0.5) 0 5px 15px;
+    border: 1px solid #6acb9d;
+    border-radius: 2px;
+}
+
+.face,
+.back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+}
+
+.back {
+    background-image: radial-gradient(circle, #6acb9d, #81ce97, #96d192, #abd48e, #bed68d, #c8d58b, #d2d58a, #dbd48a, #ded087, #e1cd84, #e3c981, #e6c57f);
+    backface-visibility: hidden;
+}
+
+.toggleCard {
+    transform: rotateY(180deg);
+}
+
+.face {
+    transform: rotateY(-180deg);
+}
+
